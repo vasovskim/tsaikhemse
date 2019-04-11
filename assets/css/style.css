@@ -1,0 +1,132 @@
+*{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+body{
+	/*padding: 50px;*/
+	max-width: 1084px;
+	margin: 0 auto;
+}
+header, ul{
+	display: flex;
+	/*ვუცვლით თვისებეს, რომ ეს კონტეინეტერბი იყვნენ მოქნილი ანუ მოერგონ გარემოს რომელშიც იქნება. ანუ ერთმანეთის გვეიგვერ იქნება. რადგან hederi და ul არიან ბლოკური ტიპის ელემენტები.*/
+}
+header{
+	justify-content: space-between;
+	height: 60px;
+	align-items: center;
+}
+.header_navigation{
+	width: 214px;
+	justify-content: space-between;
+}
+a{
+	color: #181818;
+	transition: 300ms color ease;
+}
+a:hover{
+	color: #BADC58;
+	transition: 300ms color ease;
+}
+.hero_content{
+	height: calc(100vh - 60px);
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	/*align-content: center;*/
+	align-items: center;
+	justify-content: center;
+	color: #fff
+}
+.hero_content::before{
+	content: "";
+	display: block;
+	position: absolute;
+	top: 60px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background-color: #181818;
+	opacity: .6;
+	z-index: -1;
+}
+.hero{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.hero_title{
+	font-size: 50px;
+}
+.hero{
+	font-size: 14px;
+}
+.more{
+	font-size: 20px;
+	border-radius:10px;
+	justify-content: space-around;
+	align-items: flex-end;
+	background-color: #BADC58
+
+}
+
+.more:hover {
+    color: #070707;
+}
+
+.main_pic{
+	width: 100vw;
+	height: calc(100vh - 60px);
+	position: absolute;
+	top: 60px;
+	left: 0;
+	z-index: -2;
+}
+.scrol_down{
+	position: absolute;
+	bottom: 112px;
+	color: #fff;
+}
+.column_order{
+	position: relative;
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.column{
+	flex:auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.more{
+	padding: 15px;
+	border: 1px solid #BADC58;
+}
+
+
+/*დაუყევი საიტს ისარი*/
+
+/*დაუყევი საიტის ისარის სურათი გადმოვიწერე დიზაინიდან, ჩავაგდე ფოლდერში და ახლა ფსევდო სელექტორით
+ მივუთითებ რომ სქროლ დაუნის შემდეგ (after) მოექცეს და სხვადახსვა სტილებს მივანიჭებ	
+*/
+
+.scrol_down:after {
+	content: "";
+	display: block;
+	position: absolute;
+	/*ისრის სურათს ვლინკავ ბექგრაუნდად*/
+	background: url(/assets/images/arrow.png);
+	width: 17px;
+	height: 10px;
+	/*ქვედა ორი ხაზი კოდით, ისარს ვაქცევ ტექსტის ცენტრში*/
+	left: 50%;
+    transform: translateX(-50%);
+    /*ახლა ვაკეთებ ზევიდან დაშორებას*/
+    top:40px;
+
+}
