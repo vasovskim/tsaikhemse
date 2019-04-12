@@ -1,17 +1,28 @@
+@font-face{
+	font-family: caps;
+	src:url(../fonts/caps.ttf);
+}
+@font-face{
+	font-family: normal;
+	src:url(../fonts/normal-bold.ttf);
+}
+.header_navigation a, h1, h2, address{
+	font-family: caps;
+}
+
 *{
 	margin: 0;
 	padding: 0;
 	text-decoration: none;
 	list-style: none;
+	font-family: normal;
 }
 body{
-	/*padding: 50px;*/
 	max-width: 1084px;
 	margin: 0 auto;
 }
 header, ul{
 	display: flex;
-	/*ვუცვლით თვისებეს, რომ ეს კონტეინეტერბი იყვნენ მოქნილი ანუ მოერგონ გარემოს რომელშიც იქნება. ანუ ერთმანეთის გვეიგვერ იქნება. რადგან hederi და ul არიან ბლოკური ტიპის ელემენტები.*/
 }
 header{
 	justify-content: space-between;
@@ -25,11 +36,13 @@ header{
 a{
 	color: #181818;
 	transition: 300ms color ease;
+
 }
 a:hover{
 	color: #BADC58;
 	transition: 300ms color ease;
 }
+/*.hero_content*/
 .hero_content{
 	height: calc(100vh - 60px);
 	width: 100%;
@@ -38,12 +51,13 @@ a:hover{
 	/*align-content: center;*/
 	align-items: center;
 	justify-content: center;
-	color: #fff
+	color: #fff;
 }
 .hero_content::before{
 	content: "";
 	display: block;
 	position: absolute;
+	height: calc(100vh - 60px);
 	top: 60px;
 	bottom: 0px;
 	left: 0px;
@@ -56,26 +70,24 @@ a:hover{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 }
 .hero_title{
 	font-size: 50px;
 }
-.hero{
+.hero p{
 	font-size: 14px;
 }
 .more{
-	font-size: 20px;
 	border-radius:10px;
-	justify-content: space-around;
-	align-items: flex-end;
-	background-color: #BADC58
-
+	background-color: #BADC58;
+	margin-top: 53px;
+	padding: 15px 50px;
 }
-
 .more:hover {
     color: #070707;
+    /*გავსტილო ისე რომ მაუსის მიტანის დროს გათეთრდეს ტექსტი.*/
 }
-
 .main_pic{
 	width: 100vw;
 	height: calc(100vh - 60px);
@@ -83,12 +95,71 @@ a:hover{
 	top: 60px;
 	left: 0;
 	z-index: -2;
+	object-fit: cover;
 }
-.scrol_down{
+.hero_content::after{
+	content: url(../images/static/one.png);
+	display: block;
+	width: 170px;
+	height: 240px;
 	position: absolute;
+	top: calc(100vh - 60px);
+	right: 0;
+	z-index: 1;
+}
+
+.scroll_down{
+	position: absolute;
+	margin-top: 94px;
 	bottom: 112px;
 	color: #fff;
 }
+.scroll_down:after {
+	content: "";
+	display: block;
+	position: absolute;
+	background: url(../images/static/arrow.png);
+	width: 17px;
+	height: 10px;
+	left: 50%;
+    transform: translateX(-50%);
+    top:40px;
+}
+/*.hero_content end*/
+/*menu start*/
+.menu{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	box-shadow: 0 3px 6px 0 rgba(0 0 0 0.16);
+	background-color: white;
+}
+.menu::before{
+	content: "";
+	display: block;
+	top: -57px;
+	width: 100%;
+	height: 57px;
+	position: relative;
+	background-color: #fff;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border: 1px;
+}
+.menu::after{
+	content: "";
+	display: block;
+	width: 100%;
+	height: 57px;
+	position: relative;
+	bottom: -57px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border: 1px;
+	background-color: #fff;
+	z-index: 1;
+}
+
 .column_order{
 	position: relative;
 	margin: 0;
@@ -102,31 +173,153 @@ a:hover{
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	width: 308px;
+	margin: 10px;
 }
-.more{
-	padding: 15px;
-	border: 1px solid #BADC58;
+.column:hover {
+	box-shadow: 0 3px 6px rgba(24,24,24,0.16);
+	border-radius:10px;
+	transition: all 500ms;
 }
-
-
-/*დაუყევი საიტს ისარი*/
-
-/*დაუყევი საიტის ისარის სურათი გადმოვიწერე დიზაინიდან, ჩავაგდე ფოლდერში და ახლა ფსევდო სელექტორით
- მივუთითებ რომ სქროლ დაუნის შემდეგ (after) მოექცეს და სხვადახსვა სტილებს მივანიჭებ	
-*/
-
-.scrol_down:after {
-	content: "";
-	display: block;
+.img{
+	height: 225px;
+	width: 232px;
+	object-fit: none;
+}
+.button_style{
+	font-size: 14px;
+	padding: 15px 45px;
+	border-radius:10px;
+	margin: 20px 0 30px;
+	justify-content: space-around;
+	align-items: flex-end;
+	color:  #BADC58;
+	border-color:  #BADC58;
+	background-color: #fff;
+}
+.button_style:hover{
+	background-color: #BADC58;
+	color: #000;
+	cursor: pointer;
+}
+.pasta{
+	display: flex;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+}
+/*menu end*/
+footer{
+	height: 467px;
+	width: 100%;
+	padding-top: 123px;
+	background-color: #292C2F;
 	position: absolute;
-	/*ისრის სურათს ვლინკავ ბექგრაუნდად*/
-	background: url(/assets/images/arrow.png);
-	width: 17px;
-	height: 10px;
-	/*ქვედა ორი ხაზი კოდით, ისარს ვაქცევ ტექსტის ცენტრში*/
-	left: 50%;
-    transform: translateX(-50%);
-    /*ახლა ვაკეთებ ზევიდან დაშორებას*/
-    top:40px;
+	left: 0;
+	right: 0;
+}
+footer::before{
+	content: url(../images/static/two.png);
+	display: block;
+	width: 140px;
+	height: 180px;
+	position: absolute;
+	bottom: 590px;
+	left: 0;
+	z-index: -1;
+}
+.contact, .maps, .logo {
+	margin: 0 auto;
+	max-width: 90%;
+}
+/*.adress-map{
+	display: flex;
+	justify-content: space-around;
+	align-content: center;
+}
+*/.contact{
+	color: #F59A63;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 60px;
+	width: 1085px;
+	/*border: 1px solid red;*/
+	border-radius: 10px;
+	background-color: #fff
+}
+ a.number{
+ 	color: #F59A63;
+ }
+.maps{
+	position: relative;
+	width:1085px;
+	height: 290px;
+	border:1px solid red;
+	border-radius: 20px;
+	background-color: #fff;
+	margin-top: 20px;
+	overflow: hidden;
+}
+.maps iframe{
+	width: 100%;
+	height: 100%;
+}
+.academy-logo{
+	height: 30px;
+	width: 145px;
+}
+.facebook-logo{
+	height: 15px;
+	width: 10px;	
+}
+.instagram-logo{
+	fill: #BADC58;
+	height: 15px; 
+	width: 20px;
 
+}
+.youtube-logo{
+	height: 20px; 
+	width: 18px;
+}
+.cards-logo{
+	height: 25px;
+	width: 100px;
+}
+.logo{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 40px;
+}
+.socials a {
+	width: 33%;
+	height: 24px;
+}
+.socials svg{
+	height: 100%;
+	margin: 0 10px;
+}
+.socials path{
+	transition: 300ms ease;
+}
+.socials a:hover path{
+	fill: #BADC58;
+	transition: 300ms ease;
+}
+@media (max-width: 599px){
+	body , header{
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+
+	}
+	.hero_content::after , .header_navigation{
+		display: none;
+	}
+	.contact{
+		flex-direction: column;
+	}
 }

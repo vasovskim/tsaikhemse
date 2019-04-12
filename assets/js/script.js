@@ -22,12 +22,13 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
+//განსაზღვრეთ ელემენტი, რომელზე კლიკითაც უნდა მოხდეს მენიუში დამატება
+let add_buttons = document.getElementsByClassName('button_style');
 
-let add_buttons = document.getElementsByClassName('button_style'); //განსაზღვრეთ ელემენტი, რომელზე კლიკითაც უნდა მოხდეს მენიუში დამატება
-
-let b1 = add_buttons.length
+let b1 = add_buttons.length;
 for (let i = 0; i < b1; i++) {
 	add_buttons[i].addEventListener('click', function(){
+
 		this.classList.toggle('added');
 		if(this.classList.contains('added')){
 		this.textContent='დამატებულია'
@@ -37,7 +38,7 @@ for (let i = 0; i < b1; i++) {
 	});
 }
 
-let menu_button = document.getElementsByClassName('burger')[0];
+/*let menu_button = document.getElementsByClassName('burger')[0];
 let menu_list = document.getElementsByClassName('burger-menu-list')[0];
 menu_button.addEventListener('click', function(event){
 
@@ -49,6 +50,4 @@ menu_button.addEventListener('click', function(event){
     menu_button.className = 'burger active';
     menu_list.className = menu_list.className  + ' active'
   }
-})
-
-// console.log(add_buttons);
+});*/
